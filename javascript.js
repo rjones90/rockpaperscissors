@@ -9,7 +9,7 @@
                 var computerselections = ['Rock', 'Paper', 'Scissor'];
                 var computerselection = computerselections[Math.floor(Math.random()*computerselections.length)];
                 return computerselection;
-                    }
+                    }  
                       //use prompt to get anwser from playerfunction computerPlay()
              function useroption(){
                 playerpick = prompt('Do you chose Rock, Paper or Scissors?');
@@ -19,7 +19,6 @@
                 //make console.log to see value in console
             const computerSelection = computerPlay();
             const playerSelection = useroption();
-            const winner = playRound(playerSelection, computerSelection);
             let userscore = 0
             let computerscore = 0
             let tiegames = 0   
@@ -34,12 +33,16 @@
      
                if(playerSelection === 'Scissor'){
                     if (computerSelection ==='Paper'){
+                        userscore++
                         return ('You Won!!! Scissors beat Paper');
+                        
                 }
                     else if (computerSelection === 'Rock'){
+                        computerscore++
                         return ('Computer Won! Rock beat Scissors');
                     }
                     else {
+                        tiegames++
                         return ('Tie');
                     }
                 }
@@ -47,31 +50,46 @@
                
                 else if (playerSelection === 'Paper') {
                     if (computerSelection === 'Rock'){
+                        userscore++
                         return ('You Won!!! Paper beats Rock');
                     }
                     else if (computerSelection === 'Scissors'){
+                        computerscore++
                         return ('Computer Won! Scissors beat Paper');
-                    }
+                        }
                     else {
+                        tiegames++
                         return ('Tie Game');
                     }
                 }
                 else if (playerSelection === 'Rock') {
                         if (computerSelection === 'Scissor'){
+                            userscore++
                         return ('You Won!!! Rock beats Scissor' );
                         }
                         else if (computerSelection === 'Paper'){
+                            computerscore++
                             return ('Computer Won! Paper beats Rock')
-                        }
+                                }
                         else {
+                            tiegames++
                             return ('Tie Game');
                         }
                     }
                 } 
-                console.log(playRound(playerSelection, computerSelection));
-
+                function updateScore() {
+                    if (roundWinner === 'tie') {
+                      scoreInfo.textContent = "It's a tie!"
+                    } else if (roundWinner === 'player') {
+                      scoreInfo.textContent = 'You won!'
+                    } else if (roundWinner === 'computer') {
+                      scoreInfo.textContent = 'You lost!'
+                    }
             }
+            console.log (userscore, computerscore, tiegames);
+            console.log(playRound(playerSelection, computerSelection));
+        }
 
                       
 
-    //use prompt to get anwser from playerfunction computerPlay()
+
