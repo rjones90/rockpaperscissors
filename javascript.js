@@ -1,35 +1,77 @@
-            // make a program to play rock paper scissors vs computer
-            // code needs to be in javascript
-            //name the the variable for what the computer picks, name of varible computerPlay.
-            //ComputerPlay needs to pick Rock, Paper, Scissors randomly for its Choice and return it.
-    function computerPlay(){
-        var computerselections = ['Rock', 'Paper', 'Scissor'];
-        var computerselection = computerselections[Math.floor(Math.random()*computerselections.length)];
-        return computerselection;
-    }
-            //make console.log to see value in console
-        const computerSelection = computerPlay();
-        console.log ("The computer chose: " + computerSelection)
-   
-            //write a function to play a round of the game
-            //the function needs two parameters, playerselection and computerselection.
-            // need to return the winner of the round. will be used later.
-    function playRound(playerSelection,computerSelection){
-     playerpicks = playerSelection;
-
-     if(computerSelection == 'Scissor'){
-         return ('You Won!!!');
-     }
-            else if (computerSelection == 'Rock') {
-                return ('Tie');
-            }
-            else if (computerSelection == 'Paper') {
-                return ('You Lost');
+            //make a program to play rock paper scissors vs computer
+            //code needs to be in javascript         
+            //then need to make game of five rounds. use a loop.
+ 
+        for (let i = 0; i < 5; i++) {
+                     //name the the variable for what the computer picks, name of varible computerPlay.
+                     //ComputerPlay needs to pick Rock, Paper, Scissors randomly for its Choice and return it.
+            function computerPlay(){
+                var computerselections = ['Rock', 'Paper', 'Scissor'];
+                var computerselection = computerselections[Math.floor(Math.random()*computerselections.length)];
+                return computerselection;
+                    }
+                      //use prompt to get anwser from playerfunction computerPlay()
+             function useroption(){
+                playerpick = prompt('Do you chose Rock, Paper or Scissors?');
+                return playerpick.charAt(0).toUpperCase() + playerpick.slice(1).toLowerCase();
             }
 
-    }
-            // playerselection needs to be cap sensitive.
-        const playerSelection = 'Rock';
-        console.log(playRound(playerSelection, computerSelection));  
-    //then need to make game of five rounds. use a loop.
-    //use prompt to get anser from playerfunction computerPlay() {
+                //make console.log to see value in console
+            const computerSelection = computerPlay();
+            const playerSelection = useroption();
+            const winner = playRound(playerSelection, computerSelection);
+            let userscore = 0
+            let computerscore = 0
+            let tiegames = 0   
+            console.log ('The player chose: ' + playerSelection);
+            console.log ("The computer chose: " + computerSelection);
+                //write a function to play a round of the game
+                //the function needs two parameters, playerselection and computerselection.
+                // need to return the winner of the round. will be used later.
+                
+             function playRound(playerSelection, computerSelection){
+
+     
+               if(playerSelection === 'Scissor'){
+                    if (computerSelection ==='Paper'){
+                        return ('You Won!!! Scissors beat Paper');
+                }
+                    else if (computerSelection === 'Rock'){
+                        return ('Computer Won! Rock beat Scissors');
+                    }
+                    else {
+                        return ('Tie');
+                    }
+                }
+                
+               
+                else if (playerSelection === 'Paper') {
+                    if (computerSelection === 'Rock'){
+                        return ('You Won!!! Paper beats Rock');
+                    }
+                    else if (computerSelection === 'Scissors'){
+                        return ('Computer Won! Scissors beat Paper');
+                    }
+                    else {
+                        return ('Tie Game');
+                    }
+                }
+                else if (playerSelection === 'Rock') {
+                        if (computerSelection === 'Scissor'){
+                        return ('You Won!!! Rock beats Scissor' );
+                        }
+                        else if (computerSelection === 'Paper'){
+                            return ('Computer Won! Paper beats Rock')
+                        }
+                        else {
+                            return ('Tie Game');
+                        }
+                    }
+                } 
+                console.log(playRound(playerSelection, computerSelection));
+
+            }
+
+                      
+
+    //use prompt to get anwser from playerfunction computerPlay()
