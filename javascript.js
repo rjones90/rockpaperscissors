@@ -1,7 +1,9 @@
             //make a program to play rock paper scissors vs computer
             //code needs to be in javascript         
             //then need to make game of five rounds. use a loop.
- 
+    let userscore = 0
+    let computerscore = 0
+    let tiegames = 0 
         for (let i = 0; i < 5; i++) {
                      //name the the variable for what the computer picks, name of varible computerPlay.
                      //ComputerPlay needs to pick Rock, Paper, Scissors randomly for its Choice and return it.
@@ -19,9 +21,7 @@
                 //make console.log to see value in console
             const computerSelection = computerPlay();
             const playerSelection = useroption();
-            let userscore = 0
-            let computerscore = 0
-            let tiegames = 0   
+ 
             console.log ('The player chose: ' + playerSelection);
             console.log ("The computer chose: " + computerSelection);
                 //write a function to play a round of the game
@@ -33,16 +33,16 @@
      
                if(playerSelection === 'Scissor'){
                     if (computerSelection ==='Paper'){
-                        userscore++
+                        userscore++;
                         return ('You Won!!! Scissors beat Paper');
                         
                 }
                     else if (computerSelection === 'Rock'){
-                        computerscore++
+                        computerscore++;
                         return ('Computer Won! Rock beat Scissors');
                     }
                     else {
-                        tiegames++
+                        tiegames++;
                         return ('Tie');
                     }
                 }
@@ -50,29 +50,29 @@
                
                 else if (playerSelection === 'Paper') {
                     if (computerSelection === 'Rock'){
-                        userscore++
+                        userscore++;
                         return ('You Won!!! Paper beats Rock');
                     }
                     else if (computerSelection === 'Scissors'){
-                        computerscore++
+                        computerscore++;
                         return ('Computer Won! Scissors beat Paper');
                         }
                     else {
-                        tiegames++
+                        tiegames++;
                         return ('Tie Game');
                     }
                 }
                 else if (playerSelection === 'Rock') {
                         if (computerSelection === 'Scissor'){
-                            userscore++
+                            userscore++;
                         return ('You Won!!! Rock beats Scissor' );
                         }
                         else if (computerSelection === 'Paper'){
-                            computerscore++
-                            return ('Computer Won! Paper beats Rock')
+                            computerscore++;
+                            return ('Computer Won! Paper beats Rock');
                                 }
                         else {
-                            tiegames++
+                            tiegames++;
                             return ('Tie Game');
                         }
                     }
@@ -86,9 +86,11 @@
                       scoreInfo.textContent = 'You lost!'
                     }
             }
-            console.log (userscore, computerscore, tiegames);
             console.log(playRound(playerSelection, computerSelection));
+           
         }
+        console.log (userscore, computerscore, tiegames);
+        
 
                       
 
