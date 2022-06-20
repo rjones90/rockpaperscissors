@@ -9,7 +9,9 @@
    
             // play 5 rounds, using a loop.
 
+
         for (let i = 0; i < 5; i++) {
+
 
                      //name the the variable for what the computer picks, name of varible computerPlay.
                      //ComputerPlay needs to pick Rock, Paper, Scissors randomly for its Choice and return it.
@@ -28,15 +30,18 @@
                 //make console.log to see value in console
             const computerSelection = computerPlay();
             const playerSelection = useroption();
-
+        
                 //logging the choices to make sure code is workiogn this far.
             console.log ('The player chose: ' + playerSelection);
             console.log ("The computer chose: " + computerSelection);
-
                 //write a function to play a round of the game
                 //the function needs two parameters, playerselection and computerselection.
                 // need to return the winner of the round. will be used later.
-            function playRound(playerSelection, computerSelection){
+            function game()
+            {
+                playRound(playerSelection, computerSelection);
+            }
+                function playRound(playerSelection, computerSelection){
 
      
                 if(playerSelection === 'Scissor'){
@@ -83,14 +88,12 @@
                         return ('Tie Game');
                     }
                 }
-                //function gameresult(userscore, computerscore)
-                //{}
-            } 
+                }
             console.log(playRound(playerSelection, computerSelection));
-
         }
 
             console.log (userscore, computerscore, tiegames);
+
             function gameresult(userscore, computerscore){
                 if (userscore > computerscore) {
                     return ('Congratz, You beat a Computer!');
@@ -103,7 +106,8 @@
                 }
                
             }
-            alert(gameresult(userscore, computerscore));
+
+        alert(gameresult(userscore, computerscore));
     
  
 
