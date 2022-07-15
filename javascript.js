@@ -7,19 +7,9 @@
     let tiegames = 0;
     let playerSelection;
     const playerPick = document.querySelectorAll(".userChoice");
-    const gameWinner = document.querySelector("#gameWinner");
-     
+    const gameWinner = document.querySelector("#gameWinner");        
 
-        
-        
-        //for (let i = 0; i < 5; i++) {
-        
-        
 
- 
-        
-                              //use buttons for player to select.
-//function game (){
      
 
 
@@ -41,7 +31,7 @@
                     return computerselection;
                 }  
                                        
-                  
+                    
                 
                         //logging the choices to make sure code is working this far.
 
@@ -51,7 +41,7 @@
                 function playRound(playerSelection, computerSelection){
                     console.log ('The player chose: ' + playerSelection);
                     console.log ("The computer chose: " + computerSelection);
-                           
+      
 
                         if(playerSelection  === computerSelection){
                             tiegames++;
@@ -91,29 +81,28 @@
                                 return ('Computer Won! Paper beats Rock');
                             }
                         }
-                     
+                        
                     }
-              
-                    //}
-   
                    
                     function gameresult(userscore, computerscore){
-                  
-                                        
-                        if (userscore > computerscore) {
-                            return ('Congratz, You beat a Computer!');
-                        }
-                        else if (userscore < computerscore) {
-                            return (' You lost to a Computer');
+                        console.log ('The current score is ' + userscore, computerscore)
+                        if (userscore == 5 || computerscore == 5){  
+
+                            if (userscore > computerscore) {
+                                return ('Congratz, You beat a Computer!');
+                            }
+                            else if (userscore < computerscore) {
+
+                                return (' You lost to a Computer');
+                            }
+                            else {
+                                return ('Tie Score');
+                            }
                         }
                         else {
-                            return ('Tie Score');
+                            return ('Keep playing');
                         }
-                        
-                
-                    
                     }
- 
                 
 
             
